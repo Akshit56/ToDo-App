@@ -1,10 +1,16 @@
-let todoList = ['Milk','Bread'];
+let todoList = [
+  {item: 'Milk', dueDate: '25/01/2024'},
+  {item: 'Bread', dueDate: '25/01/2024'}
+];
 displayItems();
 function addToDo(){
   let inputElement = document.querySelector('#todo-input');
+  let dateElement = document.querySelector('#todo-date');
   let todoItem = inputElement.value;
-  todoList.push(todoItem);
+  let todoDate = dateElement.value;
+  todoList.push({item: todoItem, dueDate: todoDate});
   inputElement.value = '';
+  dateElement.value = '';
   displayItems();
 }
 
