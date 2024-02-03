@@ -19,14 +19,17 @@ function displayItems(){
 
   let newHtml = '';
 
-  for(let i=0; i<todoList.length; i++){
-    newHtml += `
-    <div>
-     <span>${todoList[i]}</span>
-     <button onclick = "todoList.splice(
+for(let i=0; i<todoList.length; i++){
+  let item = todoList[i].item;
+  let dueDate = todoList[i].dueDate;
+  newHtml += `
+  
+    <span>${item}</span>
+    <span>${dueDate}</span>
+    <button class="button-delete" onclick = "todoList.splice(
       ${i},1); displayItems();">Delete</button>
-    </div>
-    `;
+    
+  `;
   }
   containerElement.innerHTML = newHtml;
 }
